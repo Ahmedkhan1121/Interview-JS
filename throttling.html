@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttling</title>
+    <style>
+        body{
+            height: 200vh;
+        }
+        .box{
+            position: fixed;
+        }
+        
+    </style>
+</head>
+<body onscroll="scrl()">
+    <div class="box">
+        <h1>Normal</h1>
+    <h2>Throttling</h2>
+    </div>
+
+
+    <script>
+        
+       
+        let c = true;
+       let ncount = 0;
+       let tcount = 0;
+        const nCount = () => {
+            ncount++;
+            document.querySelector(".box h1").innerHTML = `Normal Count: ${ncount}`;
+        }
+        const trhotCount = () => {
+            if(c === true){
+                tcount++;
+                document.querySelector(".box h2").innerHTML = `Throttling Count: ${tcount}`;
+                c = false;
+                setTimeout(() => {
+                    c = true;
+                }, 1000);
+            }
+        } 
+        const scrl = () => {
+            nCount();
+            trhotCount();
+        }
+
+    </script>
+</body>
+</html>

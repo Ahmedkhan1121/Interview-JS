@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+        console.time("start")
+        let myFact = 1;
+        let myNum = 5;
+        for(let i=myNum; myNum>1; myNum--){
+            myFact = myFact * myNum;
+        }
+        console.log(`The Factorial is : ${myFact}`);
+        console.timeEnd("start")
+    </script>
+</body>
+</html>
